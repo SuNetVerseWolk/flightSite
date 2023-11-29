@@ -63,8 +63,8 @@ header {
 	padding-left: 20px;
 	padding-bottom: 20px;
 	border-bottom-left-radius: 10px;
-	position: fixed;
-	left: 100%;
+	position: absolute;
+	left: 200%;
 
 	font-size: large;
 	background: #181818;
@@ -145,6 +145,6 @@ header {
 @keyframes showMenuItems {
 	to {
 		display: flex;
-		left: 35%;
+		left: -200%;
 	}
 }
