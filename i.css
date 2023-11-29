@@ -1,0 +1,150 @@
+@import url(i-desktop.css);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+header {
+	display: flex;
+	background-color: #000;
+
+	#logo {
+		width: 100%;
+		height: clamp(64px, 3.75vw, 108px);
+		object-fit: cover;
+	}
+	> menu {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-end;
+		position: relative;
+	}
+}
+
+#menuIcon {
+	width: clamp(64px, 3.75vw, 108px);
+	height: clamp(64px, 3.75vw, 108px);
+	cursor: pointer;
+	
+	counter-reset: lines;
+	position: relative;
+
+	&:active {
+		background-color: #ffffff15;
+		-webkit-tap-highlight-color: #ffffff15;
+	}
+	&:active + #menuItems {
+		display: flex;
+	}
+
+	> span {
+		display: block;
+		width: 80%;
+		height: 5%;
+		border-radius: 15%;
+		background-color: #fff;
+
+		counter-increment: lines;
+		position: absolute;
+		top: calc(100% - 25% * var(--line));
+		left: 50%;
+		translate: -50%;
+	}
+}
+
+#menuItems {
+	display: none;
+	flex-flow: column nowrap;
+	row-gap: 15px;
+
+	padding-left: 20px;
+	padding-bottom: 20px;
+	border-bottom-left-radius: 10px;
+	position: fixed;
+	left: 100%;
+
+	font-size: large;
+	background: #181818;
+	animation: showMenuItems 1s forwards;
+
+	&:has(#menuExit>div:active) {
+		animation: none;
+	}
+
+	#menuExit {
+		display: flex;
+		justify-content: flex-end;
+		animation: showExitBtn 1s forwards;
+
+		> div {
+			width: clamp(64px, 3.75vw, 108px);
+			height: clamp(64px, 3.75vw, 108px);
+			position: relative;
+
+			&:active {
+				background-color: #ffffff15;
+			}
+
+			&::after {
+				--angle: 45deg;
+				content: '';
+				display: block;
+				width: 80%;
+				height: 5%;
+				border-radius: 15%;
+				rotate: 90deg;
+				background-color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
+				animation: rotateByAngle .5s forwards .5s;
+			}
+			&::before {
+				--angle: -45deg;
+				content: '';
+				display: block;
+				width: 80%;
+				height: 5%;
+				border-radius: 15%;
+				rotate: -180deg;
+				background-color: #fff;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
+				animation: rotateByAngle .5s forwards .5s;
+			}
+		}
+	}
+
+	> a {
+		color: #009bff;
+		padding-inline: 10px;
+		padding-block: 5px;
+		border-radius: 5px;
+		border-left: solid currentColor 3px;
+
+		-webkit-tap-highlight-color: #ffffff15;
+
+		&:active {
+			border-left-color: #5500ff;
+		}
+	}
+}
+
+@keyframes rotateByAngle {
+	to {
+		rotate: var(--angle);
+	}
+}
+
+@keyframes showMenuItems {
+	to {
+		display: flex;
+		left: 35%;
+	}
+}
