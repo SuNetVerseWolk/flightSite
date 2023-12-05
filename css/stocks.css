@@ -1,0 +1,68 @@
+#stocks {
+	display: flex;
+	overflow-x: scroll;
+	height: min-content;
+	column-gap: 10px;
+	scroll-behavior: smooth;
+	scroll-snap-stop: always;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+
+	.stock {
+		flex: 0 0 90vw;
+		display: flex;
+		flex-flow: column nowrap;
+		margin-bottom: 50px;
+		scroll-snap-align: center;
+
+		> h3 {
+			margin-bottom: 10px;
+			text-align: center;
+			font-size: clamp(.9rem, 2.5vw, 2.5rem);
+			font-weight: bolder;
+		}
+
+		> img {
+			width: 100%;
+			object-fit: cover;
+		}
+
+		> div {
+
+			background: #000;
+			background-size: cover;
+			height: 100%;
+
+			> div {
+				background: #0009;
+				backdrop-filter: blur(10px);
+				color: #fff;
+				padding: 10px 5px;
+
+				> p {
+					margin-top: 25px;
+					margin-inline: 10px; 
+					
+					font-family: Verdana, Geneva, Tahoma, sans-serif;
+					text-align: justify;
+				}
+
+				> a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-block: 25px 5px;
+					color: #fff;
+					text-decoration: underline #ff0 3px;
+
+					&:active {
+						text-decoration: dashed underline #ff0 3px;
+					}
+					&:visited {
+						text-decoration: dotted underline #ff0 3px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,4 +1,4 @@
-@media (width >= 426px) {
+@media (width >= 770px) {
 	header > img#logo {
 		width: clamp(108px, 10vw, 288px);
 	}
@@ -15,7 +15,7 @@
 			align-items: center;
 			position: relative;
 			top: auto;
-			left: auto;
+			right: auto;
 			
 			width: 100%;
 			min-height: 100%;
@@ -54,6 +54,18 @@
 					transition: .3s;
 				}
 			}
+		}
+	}
+	footer {
+		grid-template-columns: repeat(4, 1fr) !important;
+
+		> p {
+			text-align: center !important;
+		}
+
+		> p:first-child {
+			grid-column-start: 1;
+			grid-column-end: 2;
 		}
 	}
 }
