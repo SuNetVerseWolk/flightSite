@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+
+.form {
+	display: flex;
+	flex-flow: column-reverse nowrap;
+
+	> form, img {
+		width: 100vw;
+		height: 100vh;
+	}
+
+	> form {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-evenly;
+		padding: 10px 20px;
+
+		> button {
+			color: #fff;
+			font-size: clamp(1.3rem, 4.5vw, 2rem);
+			padding: clamp(10px, 4.5vw, 30px);
+			background-color: #181818;
+		}
+	}
+}
+
+.underlinedInput {
+	display: flex;
+	flex-flow: column nowrap;
+
+	&:has(input:focus, input:not(:placeholder-shown)) {
+		> label {
+			opacity: 1;
+		}
+		> input::placeholder {
+			color: transparent;
+		}
+	}
+
+	> label {
+		opacity: 0;
+		font-size: clamp(1rem, 4.5vw, 2rem);
+		transition: 1s ease-in-out;
+	}
+
+	> input {
+		border: none;
+		outline: none;
+		border-bottom: 3px solid #000;
+		font-size: clamp(1.3rem, 4.5vw, 2rem);
+		font-weight: 700;
+	}
+}

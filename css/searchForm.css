@@ -1,14 +1,17 @@
 .form {
-    background: url(../imgs/cloud.jpg);
-    background-size: 100% 100%;
-		margin-bottom: 50px;
+		margin-bottom: var(--MB);
+		background-color: #272727;
+
+		& b {
+			font-size: clamp(1rem, 4.5vw, 1.3rem);
+			font-weight: bold;
+		}
 
     > form {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         column-gap: 10px;
-        background-color: #000033ac;
         padding: 10px 15px;
         
 
@@ -19,7 +22,7 @@
         }
 
 				& label {
-					font-size: clamp(.7rem, 2.5vw, 2rem);
+					font-size: clamp(.7rem, 4.5vw, 1rem);
 				}
     }
 
@@ -31,12 +34,13 @@
         background-color: #fff;
         border-radius: 15px;
         margin-block: 15px;
+				overflow: hidden;
 
         > input, button, div > input {
             background-color: transparent;
             border: none;
             text-align: start;
-						font-size: clamp(1rem, 2.5vw, 5rem);
+						font-size: clamp(1rem, 4.5vw, 1.3rem);
 						font-weight: bold;
         }
     }
@@ -57,8 +61,6 @@
 }
 
 .form.sub {
-    background-image: url(../imgs/cloud2.jpg);
-
     > form {
         align-items: center;
         flex-flow: row nowrap;

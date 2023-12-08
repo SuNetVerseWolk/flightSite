@@ -1,0 +1,30 @@
+@keyframes apear {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes scale {
+	to {
+		scale: 1;
+	}
+}
+
+header {
+	opacity: 0;
+	animation: apear 1s ease-in-out forwards;
+}
+
+main {
+	opacity: 0;
+	animation: apear 1s 1s ease-in-out forwards;
+
+	& .stock {
+		scale: 0;
+		animation: scale 1s 1s ease-in-out forwards;
+	}
+}
+
+footer {
+	opacity: 0;
+	animation: apear 1s 2s ease-in-out forwards;
+}

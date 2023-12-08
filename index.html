@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./css/stocks.css">
 	<link rel="stylesheet" href="./css/searchForm.css">
 	<link rel="stylesheet" href="./i-desktop.css">
+	<link rel="stylesheet" href="./css/anim.css">
 </head>
 <body>
 	<header>
@@ -24,20 +25,14 @@
 					<div></div>
 				</div>
 				<a href="#stocks">Акции</a>
-				<a href="#">Поиск</a>
+				<a href="#searchForm">Поиск</a>
 				<a href="#">Регистрация на рейс</a>
 				<a href="#">Личный кабинет</a>
 			</nav>
 		</menu>
 	</header>
-	<section>
-
-	</section>
-	<section>
-
-	</section>
 	<main>
-		<div class="form">
+		<div class="form" id="searchForm">
 			<form action="#">
 				<div class="input">
 					<label for="from">From</label>
@@ -48,33 +43,31 @@
 					<input id="to" type="text" placeholder="Russia">
 				</div>
 				<div class="input date">
-					<label for="take-off_date">Take-off date</label>
-					<button id="take-off_date">
-						<span>01.12.2023</span>
-					</button>
+					<label for="take_offDate">Take-off date</label>
+					<input type="date" name="" id="take_offDate">
 				</div>
 				<div class="input date">
-					<label for="land_date">Land date</label>
-					<button id="land_date">
-						<span>01.12.2023</span>
-					</button>
+					<label for="landDate">Land date</label>
+					<input type="date" name="" id="landDate">
 				</div>
 				<div class="input">
-					<label for="amount">People amount</label>
-					<div>
-						<input id="amount" type="number" value="1">&bigtriangleup;&bigtriangledown;
-					</div>
+					<label for="amount" id="amountText">
+						A seat for <b>1</b> person
+					</label>
+					<input type="range" name="" id="amount" min="1" value="1" max="8">
 				</div>
-				<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-112 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+					<path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-112 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
+				</svg>
 			</form>
 		</div>
 		<div id="stocks">
 			<div class="stock">
-				<h3>
-					Returning and Changing Your Tickets
-				</h3>
-				<img src="./imgs/promotions/promotion1.jpg" alt="promotion1" srcset="">
-				<div style="--img: url(./imgs/promotions/promotion1.jpg)">
+				<img loading="lazy" src="./imgs/promotions/promotion1.jpg" alt="promotion1" srcset="">
+				<div>
+					<h3>
+						Returning and Changing Your Tickets
+					</h3>
 					<div>
 						<p>
 							The pandemic has changed many travelers’ plans, but we know that it will not last forever. 
@@ -87,11 +80,11 @@
 				</div>
 			</div>
 			<div class="stock">
-				<h3>
-					Best offers
-				</h3>
-				<img src="./imgs/promotions/promotion2.jpg" alt="promotion2" srcset="">
-				<div style="--img: url(./imgs/promotions/promotion2.jpg)">
+				<img loading="lazy" src="./imgs/promotions/promotion2.jpg" alt="promotion2" srcset="">
+				<div>
+					<h3>
+						Best offers
+					</h3>
 					<div>
 						<p>
 							To see again the streets that witnessed so much. To hug your beloved ones and look back to see
@@ -102,11 +95,11 @@
 				</div>
 			</div>
 			<div class="stock">
-				<h3>
-					See you more often
-				</h3>
-				<img src="./imgs/promotions/promotion3.jpg" alt="promotion3" srcset="">
-				<div style="--img: url(./imgs/promotions/promotion3.jpg)">
+				<img loading="lazy" src="./imgs/promotions/promotion3.jpg" alt="promotion3" srcset="">
+				<div>
+					<h3>
+						See you more often
+					</h3>
 					<div>
 						<p>
 							Since the beginning of January, we have been expanding the geography of flights in Russia so that you can
@@ -117,11 +110,11 @@
 				</div>
 			</div>
 			<div class="stock">
-				<h3>
-					Everything is on again
-				</h3>
-				<img src="./imgs/promotions/promotion4.jpg" alt="promotion4" srcset="">
-				<div style="--img: url(./imgs/promotions/promotion4.jpg)">
+				<img loading="lazy" src="./imgs/promotions/promotion4.jpg" alt="promotion4" srcset="">
+				<div>
+					<h3>
+						Everything is on again
+					</h3>
 					<div>
 						<p>
 							From August 10, we will resume flights to Turkey. Flights from Moscow to Antalya will be operated twice
@@ -146,14 +139,14 @@
 	</main>
 	<footer>
 		<p>8 (800) 777-77-77</p>
-		<p class="textEnd"><a href="#">Home</a></p>
-		<p><a href="#">Login</a></p>
+		<p class="textEnd"><a href="./index.html">Home</a></p>
+		<p><a href="./pages/login.html">Login</a></p>
 		<p class="textCenter"><a href="#">Sign up</a></p>
 		<p class="textEnd"><a href="#">Contact</a></p>
 		<p><a href="#">News</a></p>
 		<p class="textCenter"><a href="#">Returning</a></p>
 		<p class="textEnd"><a href="#">Feedback</a></p>
 	</footer>
-	<script src="scroll.js"></script>
+	<script src="i.js"></script>
 </body>
 </html>

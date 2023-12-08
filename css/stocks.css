@@ -2,17 +2,17 @@
 	display: flex;
 	overflow-x: scroll;
 	height: min-content;
-	column-gap: 10px;
+	column-gap: clamp(10px, 4.5vw, 30px);
 	scroll-behavior: smooth;
 	scroll-snap-stop: always;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
+	margin-bottom: var(--MB);
 
 	.stock {
 		flex: 0 0 90vw;
 		display: flex;
 		flex-flow: column nowrap;
-		margin-bottom: 50px;
 		scroll-snap-align: center;
 
 		> h3 {
@@ -24,19 +24,24 @@
 
 		> img {
 			width: 100%;
+			max-height: 50vh;
 			object-fit: cover;
 		}
 
 		> div {
-
-			background: #000;
-			background-size: cover;
 			height: 100%;
+			color: #fff;
+			background: #272727;
+
+			> h3 {
+				padding-top: 25px;
+				padding-inline: 10px;
+				font-size: clamp(1rem, 2.5vw, 2.5rem);
+				font-weight: bolder;
+			}
 
 			> div {
-				background: #0009;
 				backdrop-filter: blur(10px);
-				color: #fff;
 				padding: 10px 5px;
 
 				> p {
@@ -48,9 +53,8 @@
 				}
 
 				> a {
-					display: flex;
-					justify-content: center;
-					align-items: center;
+					display: block;
+					text-align: center;
 					margin-block: 25px 5px;
 					color: #fff;
 					text-decoration: underline #ff0 3px;

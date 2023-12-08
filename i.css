@@ -25,12 +25,13 @@
 }
 
 html {
+	--MB: clamp(10px, 4.5vh, 50px);
 	scroll-behavior: smooth;
 }
 
 header {
 	display: flex;
-	background-color: #000;
+	background-color: #181818;
 
 	#logo {
 		width: 100%;
@@ -55,7 +56,6 @@ footer {
 	row-gap: 10px;
 	color: #fff;
 	background-color: #000;
-	margin-top: 50px;
 	padding: 15px 10px;
 
 	> p {
