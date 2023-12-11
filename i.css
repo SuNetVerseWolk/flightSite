@@ -121,19 +121,20 @@ footer {
 	padding-left: 20px;
 	padding-bottom: 20px;
 	border-bottom-left-radius: 10px;
+
 	position: absolute;
 	top: 0;
 	right: -100%;
 
 	font-size: large;
 	background: #181818;
-	animation: showMenuItems 1s forwards;
+	animation: showMenuItems 1s ease-in forwards;
 
 	&:active {
 		display: flex;
 	}
 	&:has(#menuExit:active) {
-		animation: hideMenuItems 1s forwards;
+		animation: hideMenuItems 1s ease-out forwards;
 	}
 
 	#menuExit {

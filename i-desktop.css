@@ -13,6 +13,9 @@
 	header {
 		width: 100%;
 		margin-bottom: var(--MB);
+		
+		opacity: 0;
+		animation: apear 1s ease-in forwards;
 
 		> img#logo {
 			width: clamp(108px, 10vw, 288px);
@@ -20,6 +23,13 @@
 	}
 	main {
 		width: 80%;
+		opacity: 0;
+		animation: apear 1s 1s ease-in forwards;
+
+		& .stock {
+			scale: 0;
+			animation: scale 1s 2s ease-in forwards;
+		}
 
 		.form {
 			.input:not(:has(#mail, input[type=range])) {
@@ -92,6 +102,8 @@
 	footer {
 		width: 100%;
 		grid-template-columns: repeat(4, 1fr) !important;
+		opacity: 0;	
+		animation: apear 1s 2s ease-in forwards;
 
 		> p {
 			text-align: center !important;
