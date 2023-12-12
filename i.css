@@ -1,20 +1,3 @@
-@keyframes rotateByAngle {
-	to {
-		rotate: var(--angle);
-	}
-}
-
-@keyframes showMenuItems {
-	to {
-		right: 0;
-	}
-}
-@keyframes hideMenuItems {
-	from {
-		right: 0;
-	}
-}
-
 * {
 	margin: 0;
 	padding: 0;

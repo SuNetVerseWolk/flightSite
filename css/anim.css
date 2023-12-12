@@ -8,3 +8,19 @@
 		scale: 1 1;
 	}
 }
+@keyframes rotateByAngle {
+	to {
+		rotate: var(--angle);
+	}
+}
+
+@keyframes showMenuItems {
+	to {
+		right: 0;
+	}
+}
+@keyframes hideMenuItems {
+	from {
+		right: 0;
+	}
+}
