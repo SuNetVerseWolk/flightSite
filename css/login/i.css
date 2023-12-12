@@ -13,12 +13,13 @@ body {
 	display: flex;
 	flex-flow: column-reverse nowrap;
 
-	> form, img {
-		width: 100vw;
-		height: 100vh;
+	> img {
+		display: none;
 	}
 
 	> form {
+		width: 100vw;
+		height: 100vh;
 		display: flex;
 		flex-flow: column nowrap;
 		justify-content: space-evenly;
@@ -36,6 +37,9 @@ body {
 .underlinedInput {
 	display: flex;
 	flex-flow: column nowrap;
+	opacity: 0;
+	animation: apear 1s ease forwards;
+	animation-delay: var(--i);
 
 	&:has(input:focus, input:not(:placeholder-shown)) {
 		> label {
