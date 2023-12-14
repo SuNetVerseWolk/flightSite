@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-items: center;
+	min-height: 100dvh;
+}
+
+.form {
+	display: flex;
+	flex-flow: column-reverse nowrap;
+
+	> img {
+		display: none;
+	}
+
+	> form {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-evenly;
+		width: 100vw;
+		height: 100dvh;
+		padding: 10px 20px;
+
+		> button {
+			color: #fff;
+			font-size: clamp(1.3rem, 4.5vw, 2rem);
+			padding: clamp(10px, 4.5vw, 30px);
+			background-color: #181818;
+			font-family: serif;
+			scale: 0;
+			border: none;
+			border-top-left-radius: 100% 10px;
+			border-top-right-radius: 10px 100%;
+			border-bottom-left-radius: 10px 100%;
+			border-bottom-right-radius: 100% 10px;
+			transform-origin: top right;
+			animation: fadeInBtn 1s 1s ease-out forwards;
+		}
+	}
+}
+
+.underlinedInput {
+	display: flex;
+	flex-flow: column nowrap;
+	font-family: cursive;
+	animation: fadeInUnderlinedInput 1s ease forwards;
+	animation-delay: var(--i);
+	transform-origin: left;
+	transform: scaleX(0);
+
+	&:has(input:focus, input:not(:placeholder-shown)) {
+		> label {
+			animation: fadeInLabel 1s ease-out forwards;
+		}
+		> input::placeholder {
+			color: transparent;
+		}
+	}
+
+	> label {
+		opacity: 0;
+		font-size: clamp(1rem, 4.5vw, 2rem);
+	}
+
+	> input {
+		border: none;
+		outline: none;
+		border-bottom: 3px solid #000;
+		font-family: inherit;
+		font-size: clamp(1.3rem, 4.5vw, 2rem);
+		font-weight: 700;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 10px 100%;
+		border-bottom-right-radius: 100% 10px;
+	}
+}

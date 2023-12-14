@@ -1,0 +1,20 @@
+@keyframes fadeInUnderlinedInput {
+	to {
+		transform: scaleX(100%);
+	}
+}
+@keyframes fadeInLabel {
+	from {
+		translate: 0 100%;
+	}
+	to {
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+@keyframes fadeInBtn {
+	to {
+		transform-origin: bottom left;
+		scale: 1;
+	}
+}
