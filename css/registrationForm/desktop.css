@@ -1,0 +1,40 @@
+@media (width >= 900px) {
+	body {
+		display: grid;
+		place-items: center;
+		min-height: auto;
+		width: 100vw;
+		height: 100vh;
+	}
+	.form {
+		flex-flow: row nowrap;
+		width: 80%;
+		height: 80%;
+		background-color: #1e1f21;
+
+		> img {
+			display: block;
+			width: 50%;
+			height: 100%;
+		}
+
+		> form {
+			width: 50%;
+			height: 100%;
+			align-items: center;
+
+			> button {
+				max-width: clamp(300px, 5%, 1000px);
+				background-color: #ccc;
+				color: #000;
+			}
+		}
+	}
+	.underlinedInput {
+		color: #fff;
+
+		> input::placeholder {
+			color: #aaa;
+		}
+	}
+}

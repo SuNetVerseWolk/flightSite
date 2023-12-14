@@ -4,8 +4,6 @@
 }
 
 body {
-	display: grid;
-	place-items: center;
 	min-height: 100dvh;
 }
 
@@ -23,12 +21,12 @@ body {
 		justify-content: space-evenly;
 		width: 100vw;
 		height: 100dvh;
-		padding: 10px 20px;
+		padding: clamp(10px, 2.5%, 30px) clamp(20px, 4.5%, 60px);
 
 		> button {
 			color: #fff;
-			font-size: clamp(1.3rem, 4.5vw, 2rem);
-			padding: clamp(10px, 4.5vw, 30px);
+			font-size: clamp(1.3rem, 4.5%, 2rem);
+			padding: clamp(10px, 4.5%, 30px);
 			background-color: #181818;
 			font-family: serif;
 			scale: 0;
@@ -47,10 +45,11 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	font-family: cursive;
-	animation: fadeInUnderlinedInput 1s ease forwards;
-	animation-delay: var(--i);
 	transform-origin: left;
 	transform: scaleX(0);
+	animation: fadeInUnderlinedInput 1s var(--i) ease forwards;
+	width: 100%;
+	font-size: clamp(1.3rem, 4.5%, 2rem);
 
 	&:has(input:focus, input:not(:placeholder-shown)) {
 		> label {
@@ -63,7 +62,7 @@ body {
 
 	> label {
 		opacity: 0;
-		font-size: clamp(1rem, 4.5vw, 2rem);
+		font-size: clamp(.8rem, 6.5%, 2rem);
 	}
 
 	> input {
@@ -71,11 +70,13 @@ body {
 		outline: none;
 		border-bottom: 3px solid #000;
 		font-family: inherit;
-		font-size: clamp(1.3rem, 4.5vw, 2rem);
+		font-size: inherit;
 		font-weight: 700;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
 		border-top-right-radius: 10px 100%;
 		border-bottom-right-radius: 100% 10px;
+		background-color: transparent;
+		color: inherit;
 	}
 }
