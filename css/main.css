@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	-webkit-tap-highlight-color: #0009;
+}
+
+html, body {
+	min-height: 100dvh;
+}
+
+html {
+	--MB: clamp(10px, 3vh, 50px);
+	scroll-behavior: smooth;
+}
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+button {
+	cursor: pointer;
+}

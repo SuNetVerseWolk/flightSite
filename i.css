@@ -1,17 +1,3 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	text-decoration: none;
-	outline: none;
-	-webkit-tap-highlight-color: #0009;
-}
-
-html {
-	--MB: clamp(10px, 4.5vh, 50px);
-	scroll-behavior: smooth;
-}
-
 header {
 	display: flex;
 	background-color: #181818;
@@ -19,6 +5,7 @@ header {
 	#logo {
 		width: 100%;
 		height: clamp(64px, 3.75vw, 108px);
+
 		object-fit: cover;
 		object-position: center;
 	}
@@ -28,24 +15,32 @@ header {
 		align-items: flex-end;
 		justify-content: center;
 		position: relative;
+
+		font-family: sans-serif;
+		font-weight: 600;
+
 		width: 100%;
+		background-color: inherit;
 	}
+}
+main {
+	margin-bottom: var(--MB);
 }
 
 footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	flex-flow: row wrap;
 	row-gap: 10px;
-	color: #fff;
-	background-color: #000;
 	padding: 15px 10px;
 
+	color: #fff;
+	background-color: #000;
+
 	> p {
-		margin-bottom: 10px;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		font-size: large;
+		font-family: sans-serif;
+		font-size: clamp(1rem, 1.3vw, 1.5rem);
 		font-weight: 700;
+		margin-bottom: 10px;
 
 		> a {
 			color: #009bff;
@@ -53,8 +48,7 @@ footer {
 	}
 
 	> p:first-child {
-		grid-column-start: 1;
-		grid-column-end: 3;
+		grid-column: 1 / 3;
 	}
 
 	.textCenter {
@@ -84,21 +78,21 @@ footer {
 	> span {
 		display: block;
 		width: 80%;
-		height: 5%;
-		border-radius: 15%;
+		height: 4%;
 		background-color: #fff;
 
 		counter-increment: lines;
 		position: absolute;
 		top: calc(100% - 25% * var(--line));
 		left: 50%;
-		translate: -50%;
+		translate: -50% -50%;
 	}
 }
 
 #menuItems {
 	display: none;
 	flex-flow: column nowrap;
+	justify-content: space-evenly;
 	row-gap: 15px;
 
 	padding-left: 20px;
@@ -110,7 +104,7 @@ footer {
 	right: -100%;
 
 	font-size: large;
-	background: #181818;
+	background-color: inherit;
 	animation: showMenuItems 1s ease-in forwards;
 
 	&:active {
@@ -126,9 +120,9 @@ footer {
 		animation: showExitBtn 1s forwards;
 
 		> div {
+			position: relative;
 			width: clamp(64px, 3.75vw, 108px);
 			height: clamp(64px, 3.75vw, 108px);
-			position: relative;
 
 			&:active {
 				background-color: #ffffff15;
@@ -137,31 +131,33 @@ footer {
 
 			&::after {
 				--angle: 45deg;
+
 				content: '';
 				display: block;
 				width: 80%;
-				height: 5%;
-				border-radius: 15%;
-				rotate: 90deg;
+				height: 4%;
 				background-color: #fff;
+
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				rotate: 90deg;
 				translate: -50% -50%;
 				animation: rotateByAngle .5s forwards .5s;
 			}
 			&::before {
 				--angle: -45deg;
+
 				content: '';
 				display: block;
 				width: 80%;
-				height: 5%;
-				border-radius: 15%;
-				rotate: -180deg;
+				height: 4%;
 				background-color: #fff;
+
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				rotate: -180deg;
 				translate: -50% -50%;
 				animation: rotateByAngle .5s forwards .5s;
 			}
@@ -169,12 +165,13 @@ footer {
 	}
 
 	> a {
-		color: #009bff;
 		padding-inline: 10px;
 		padding-block: 5px;
 		border-radius: 5px;
 		border-left: solid currentColor 3px;
+		font-size: clamp(1rem, 1.3vw, 1.5rem);
 
+		color: #009bff;
 		-webkit-tap-highlight-color: #ffffff15;
 
 		&:active {

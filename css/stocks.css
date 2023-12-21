@@ -1,26 +1,20 @@
 #stocks {
 	display: flex;
-	overflow-x: scroll;
+	column-gap: clamp(10px, 4.5%, 30px);
+
 	height: min-content;
-	column-gap: clamp(10px, 4.5vw, 30px);
+	margin-bottom: var(--MB);
+
+	overflow-x: scroll;
 	scroll-behavior: smooth;
 	scroll-snap-stop: always;
   scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-	margin-bottom: var(--MB);
 
 	.stock {
 		flex: 0 0 90vw;
 		display: flex;
 		flex-flow: column nowrap;
 		scroll-snap-align: center;
-
-		> h3 {
-			margin-bottom: 10px;
-			text-align: center;
-			font-size: clamp(.9rem, 2.5vw, 2.5rem);
-			font-weight: bolder;
-		}
 
 		> img {
 			width: 100%;
@@ -29,24 +23,26 @@
 		}
 
 		> div {
-			height: 100%;
 			color: #fff;
 			background: #272727;
+			height: 100%;
+			padding: clamp(10px, 5%, 25px);
 
 			> h3 {
-				padding-top: 25px;
-				padding-inline: 10px;
-				font-size: clamp(1rem, 2.5vw, 2.5rem);
+				margin-bottom: clamp(19px, 7.5%, 25px);
+				font-size: clamp(1.2rem, 1.6vw, 2rem);
 				font-weight: bolder;
 			}
 
 			> div {
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
 				backdrop-filter: blur(10px);
-				padding: 10px 5px;
 
 				> p {
-					margin-top: 25px;
-					margin-inline: 10px; 
+					margin-bottom: clamp(13px, 5%, 25px);
+					font-size: clamp(1rem, 1.2vw, 1.5rem);
 					
 					font-family: Verdana, Geneva, Tahoma, sans-serif;
 					text-align: justify;
@@ -54,16 +50,30 @@
 
 				> a {
 					display: block;
-					text-align: center;
-					margin-block: 25px 5px;
+					padding-inline: 5px;
 					color: #fff;
-					text-decoration: underline #ff0 3px;
+					position: relative;
+					font-size: clamp(1rem, 1.15vw, 1.3rem);
 
-					&:active {
-						text-decoration: dashed underline #ff0 3px;
+					&::after {
+						content: '';
+						display: block;
+						position: absolute;
+						border-bottom: #009bff 3px solid;
+
+						width: 100%;
+						top: calc(100% - 3px);
+						left: 50%;
+						translate: -50% 50%;
+						transition: .1s;
+					}
+					&:active:after {
+						width: 50%;
+						border-bottom-color: #5500ff;
+						transition: .3s;
 					}
 					&:visited {
-						text-decoration: dotted underline #ff0 3px;
+						border-bottom: #009bff 3px dashed;
 					}
 				}
 			}

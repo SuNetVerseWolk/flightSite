@@ -1,18 +1,15 @@
-* {
-	margin: 0;
-	box-sizing: border-box;
-}
-
-body {
-	min-height: 100dvh;
-}
-
 .form {
 	display: flex;
 	flex-flow: column-reverse nowrap;
+	border-top-right-radius: 100% clamp(10px, 2.5%, 20px);
+	border-bottom-right-radius: clamp(10px, 2.5%, 20px) 100%;
 
 	> img {
 		display: none;
+		border-top-left-radius: clamp(10px, 2.5%, 20px) 100%;
+		border-top-right-radius: 100% clamp(10px, 2.5%, 20px);
+		border-bottom-left-radius: 100% clamp(10px, 2.5%, 20px);
+		border-bottom-right-radius: clamp(10px, 2.5%, 20px) 100%;
 	}
 
 	> form {
@@ -21,22 +18,25 @@ body {
 		justify-content: space-evenly;
 		width: 100vw;
 		height: 100dvh;
-		padding: clamp(10px, 2.5%, 30px) clamp(20px, 4.5%, 60px);
+		padding-inline: clamp(20px, 4.5vh, 60px);
+		padding-bottom: 0;
 
 		> button {
 			color: #fff;
-			font-size: clamp(1.3rem, 4.5%, 2rem);
-			padding: clamp(10px, 4.5%, 30px);
+			font-size: clamp(1.3rem, 4%, 2rem);
+			padding: clamp(10px, 3%, 30px);
 			background-color: #181818;
 			font-family: serif;
 			scale: 0;
 			border: none;
-			border-top-left-radius: 100% 10px;
-			border-top-right-radius: 10px 100%;
-			border-bottom-left-radius: 10px 100%;
-			border-bottom-right-radius: 100% 10px;
 			transform-origin: top right;
 			animation: fadeInBtn 1s 1s ease-out forwards;
+
+			
+			border-top-left-radius: 100% clamp(10px, 2.5%, 20px);
+			border-top-right-radius: 100% clamp(10px, 2.5%, 20px);
+			border-bottom-left-radius: clamp(10px, 2.5%, 20px) 100%;
+			border-bottom-right-radius: clamp(10px, 2.5%, 20px) 100%;
 		}
 	}
 }

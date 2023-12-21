@@ -1,0 +1,115 @@
+@media (width >= 900px) {
+	html {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+	}
+	body {
+		align-items: center;
+		width: clamp(800px, 80vw, 2000px);
+	}
+	header {
+		width: 100%;
+		margin-bottom: var(--MB);
+		
+		opacity: 0;
+		animation: apear 1s ease-in forwards;
+
+		> img#logo {
+			width: clamp(108px, 10vw, 288px);
+		}
+	}
+	main {
+		width: 80%;
+		opacity: 0;
+		animation: apear 1s 1s ease-in forwards;
+
+		& .stock {
+			scale: 0;
+			animation: scale 1s 2s ease-in forwards;
+		}
+
+		.form {
+			.input:not(:has(#mail, input[type=range])) {
+        width: calc(25% - 10px);
+			}
+			.input:has(#amount) {
+				flex-direction: row;
+				justify-content: space-between;
+
+				#amount {
+					width: 50%;
+				}
+			}
+		}
+	}
+	menu {
+		#menuIcon, #menuItems #menuExit {
+			display: none;
+		}
+	
+		#menuItems {
+			position: relative;
+			top: auto;
+			right: auto;
+
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			
+			width: 100%;
+			min-height: 100%;
+			padding: 0;
+			border-radius: 0;
+	
+			> a {
+				border: none;
+				position: relative;
+				padding-right: 10px;
+	
+				&::after {
+					content: '';
+					display: block;
+					width: 0;
+					height: 3px;
+					background-color: currentColor;
+					position: absolute;
+					top: calc(100% - 3px);
+					left: 50%;
+					translate: -50%;
+					transition: .1s;
+				}
+	
+				&:hover::after {
+					width: 101%;
+					transition: .5s;
+				}
+				&:active:after {
+					width: 30%;
+					transition: .3s;
+					background-color: #5500ff;
+				}
+			}
+		}
+	}
+	footer {
+		width: 100%;
+		opacity: 0;
+		grid-template-columns: repeat(4, 1fr);
+		animation: apear 1s 2s ease-in forwards;
+
+		> p {
+			text-align: center !important;
+		}
+
+		> p:first-child {
+			grid-column: 1;
+		}
+	}
+	#stocks {
+		overflow-x: hidden;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: clamp(10px, 4.5vmax, 30px);
+	}
+}

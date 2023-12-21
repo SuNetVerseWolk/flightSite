@@ -3,27 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Log in</title>
+	<title>Login</title>
+	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../css/registrationForm/i.css">
 	<link rel="stylesheet" href="../css/registrationForm/desktop.css">
 	<link rel="stylesheet" href="../css/registrationForm/anim.css">
 </head>
 <body>
 	<div class="form">
-		<form action="">
+		<form id="loginForm" action="">
 			<div class="underlinedInput" style="--i: 0s;">
-				<label for="">Name</label>
-				<input type="text" name="" id="name" placeholder="Name" required>
-			</div>
-			<div class="underlinedInput" style="--i: .05s;">
-				<label for="">Last name</label>
-				<input type="text" name="" id="lastName" placeholder="Last name" required>
-			</div>
-			<div class="underlinedInput" style="--i: .1s;">
-				<label for="">Passport number</label>
-				<input type="number" name="" id="passportNumber" placeholder="Passport number" required>
-			</div>
-			<div class="underlinedInput" style="--i: .15s;">
 				<label for="">Phone</label>
 				<input type="number" name="" id="phone" placeholder="Phone" required>
 			</div>
@@ -31,13 +20,10 @@
 				<label for="">Password</label>
 				<input type="password" name="" id="password" placeholder="Password" required>
 			</div>
-			<div class="underlinedInput" style="--i: .25s;">
-				<label for="">Repassword</label>
-				<input type="password" name="" id="repassword" placeholder="Repassword" required>
-			</div>
-			<button type="submit">Log in</button>
+			<button class="rectBR" type="submit">Login</button>
 		</form>
-		<img src="../imgs/loginFon.jpg" alt="" srcset="">
+		<img src="../imgs/signUpFon.jpg" alt="" srcset="">
 	</div>
+	<script type="module" src="../script/login.js"></script>
 </body>
 </html>

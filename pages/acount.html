@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="../logo.png" type="image/png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>VolgoAirLines</title>
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../i.css">
+	<link rel="stylesheet" href="../desktop.css">
+	<link rel="stylesheet" href="../css/acount/i.css">
+	<link rel="stylesheet" href="../css/acount/desktop.css">
+	<link rel="stylesheet" href="../css/anim.css">
+</head>
+<body>
+	<header>
+		<img id="logo" src="../logo.png" alt="logo">
+		<menu>
+			<a id="menuIcon" href="javascript:">
+				<span style="--line: 1;"></span>
+				<span style="--line: 2;"></span>
+				<span style="--line: 3;"></span>
+			</a>
+			<nav id="menuItems">
+				<div id="menuExit">
+					<div></div>
+				</div>
+				<a href="#stocks">Stocks</a>
+				<a href="#searchForm">Search</a>
+				<a href="#">Check-in for the flight</a>
+				<a href="../pages/acount.html">Personal account</a>
+			</nav>
+		</menu>
+	</header>
+	<main>
+		<div id="acountForm">
+			<div id="aroundInfo">
+				<div id="info">
+					<img id="userPhoto" class="photoChangable" src="../imgs/photoIsUndefined.jpeg" alt="">
+					<div id="fullName">
+						<span id="name">Name</span>
+						<span id="lastName">LastName</span>
+					</div>
+				</div>
+				<div id="actInfo">
+					<div>
+						<p>Flights <span id="addFlights">0</span></p>
+					</div>
+					<div>
+						<button id="editAcount">Edit</button>
+						<button id="deleteAcount">Delete</button>
+					</div>
+				</div>
+			</div>
+			<div id="flightsInfo">
+				<h2>Flights history</h2>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<p>8 (800) 777-77-77</p>
+		<p class="textEnd"><a href="../index.html">Home</a></p>
+		<p><a href="../pages/login.html">Login</a></p>
+		<p class="textCenter"><a href="../pages/signUp.html">Sign up</a></p>
+		<p class="textEnd"><a href="#">Contact</a></p>
+		<p><a href="#">News</a></p>
+		<p class="textCenter"><a href="#">Returning</a></p>
+		<p class="textEnd"><a href="#">Feedback</a></p>
+	</footer>
+	<script type="module" src="../script/setPhoto.js"></script>
+	<script type="module" src="../script/loadAcountData.js"></script>
+	<script type="module" src="../script/deleteAcount.js"></script>
+</body>
+</html>
