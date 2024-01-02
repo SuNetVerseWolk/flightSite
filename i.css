@@ -6,7 +6,6 @@ header {
 		height: clamp(64px, 3.75vw, 108px);
 
 		> img {
-			width: 100%;
 			height: 100%;
 
 			object-fit: cover;
@@ -121,7 +120,6 @@ footer {
 	#menuExit {
 		display: flex;
 		justify-content: flex-end;
-		animation: showExitBtn 1s forwards;
 
 		> div {
 			position: relative;
