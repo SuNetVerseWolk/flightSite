@@ -112,4 +112,16 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: clamp(10px, 4.5vmax, 30px);
 	}
+
+	.input:nth-child(1) {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.input:nth-child(2) {
+		border-radius: 0;
+	}
+	.input:nth-child(3) {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
 }
